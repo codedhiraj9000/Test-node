@@ -1,0 +1,325 @@
+:root{
+  --start: url(/images/start.webp);
+  --result:  rgb(255, 255, 255);
+  --lose:  rgb(255, 0, 0);
+  --win:  rgb(0, 255, 0);
+  --draw: rgb(0, 155, 255);
+  --startDisplay: linear-gradient(transparent 80%, rgba(255, 255, 255, 0.5));
+  --winDisplay: linear-gradient(transparent 80%, rgba(0, 255, 0, 0.5));
+  --loseDisplay: linear-gradient(transparent 80%, rgba(255, 0, 0, 0.5));
+  --tieDisplay: linear-gradient(transparent 80%, rgba(0, 255, 255, 0.5));
+  --container: linear-gradient(to bottom, rgba(155,255, 255, 0.75), rgba(0, 0, 0, 0.3) 50%, rgb(155, 155, 155));
+  --buttonSec: linear-gradient(to bottom, transparent 70%, rgba(0, 255, 255, 0.5));
+  --btn: linear-gradient(to bottom, rgb(55, 155, 255), transparent 85%);
+  --footer: linear-gradient(to bottom, transparent 65%, rgba(255, 147, 22, 0.8));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: #f2f2f2;
+  font-family: serif;
+  text-shadow: 0 0 6px currentColor;
+  transition: all 1s;
+  text-align: center;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, black, purple, darkblue);
+  flex-direction: column;
+  background-size: 400%;
+  background-position: left;
+  animation: background 3s linear infinite alternate;
+  transition: all 1000ms;
+}
+
+@keyframes background {
+  from{
+    background-position: left;
+  }
+  
+  to{
+    background-position: right;
+  }
+}
+
+.container {
+  height: 85vh;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  background: var(--container);
+  position: relative;
+}
+
+.computer-sec {
+  height: 250px;
+  width: 250px;
+  background: var(--startDisplay);
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  position: absolute;
+  top: 13%;
+  
+}
+
+.button-sec{
+  background: var(--buttonSec);
+  padding: 2%;
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  position: absolute;
+  bottom: 20px;
+}
+
+button {
+  /* height: 30px; */
+  /* width: 50px; */
+  padding: 2% 2%;
+  text-align: center;
+  background: var(--btn);
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 10px;
+  font-size: 145%;
+  transition: all 2s;
+  
+}
+
+.computer {
+  background: var(--start);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 5px white);
+  height: 70%;
+  width: 70%;
+  /* animation: computer 1s linear infinite  */;
+}
+
+@keyframes computer {
+  0%{
+    background: var(--rock);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  50%{
+    background: var(--paper);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  100% {
+    background: var(--sccisor);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.result {
+  position: absolute;
+  bottom: 25%;
+  padding: 0px 10px;
+  /* z-index: 99; */
+  background: linear-gradient(to bottom, transparent 70%, var(--result));
+}
+
+.result h3 {
+  text-align: center;
+}
+
+button:active {
+  background: linear-gradient(to bottom, rgb(255, 155, 0), transparent 85%);
+}
+
+.animation {
+  animation: computer 1s linear infinite;
+}
+
+.result-win{
+  background: linear-gradient(to bottom, transparent 70%, var(--win));
+}
+
+.result-lose {
+  background: linear-gradient(to bottom, transparent 70%, var(--lose));
+}
+
+.result-draw {
+  background: linear-gradient(to bottom, transparent 70%, var(--draw));
+}
+
+.rock {
+  background: var(--rock);
+}
+
+.paper {
+  background: var(--paper);
+}
+
+.sccisor {
+  background: var(--sccisor);
+}
+/* 
+ .loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 99;
+  backdrop-filter: blur(10px);
+}
+ */
+/* .loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+   border-radius: 50%; 
+  border-top: 3px solid green;
+  border-left: 1px solid magenta;
+  border-right: 4px solid #3498db;
+  border-bottom: 5px solid transparent;
+  width: 40px;
+  height: 40px;
+  animation: spin 6s linear infinite;
+} */
+
+/* @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}  */
+ 
+
+/* 
+.loadingScreen {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+} */
+/* /*  */
+/* .loadingScreen .ring {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  margin: -30px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top: 4px solid #24ecff;
+  animation: anim 3s reverse infinite; 
+} */
+
+/* @keyframes anim {
+  0% {
+    transform: rotate(360deg)
+  }
+}  */
+ 
+/* .loadingScreen .ring::before {
+   content: '';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: #24ecff;
+  box-shadow: 0 0 0 5px #24ecff33,
+    0 0 0 10px #24ecff22,
+    0 0 0 20px #24ecff11,
+    0 0 20px #24ecff,
+    0 0 50px #24ecff; 
+} */
+
+/* .loadingScreen .ring:nth-child(3) {
+  position: absolute;
+  top: -66.66px
+} */
+
+/* .loadingScreen p {
+  position: absolute;
+  color: #fff;
+  font-size: 1.5em;
+  font-family: fantasy;
+  bottom: -80px;
+  letter-spacing: 0.15em; 
+} */ 
+
+footer {
+  background: var(--footer);
+  padding: 5px 20px;
+}
+
+a {
+  text-decoration: none;
+  transition: all 1s;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.win-display {
+  background: var(--winDisplay);
+}
+
+.lose-display{
+  background: var(--loseDisplay);
+}
+
+.tie-display {
+  background: var(--tieDisplay);
+}
+
+@media screen and (max-width: 1000px){
+ .computer-sec {
+   height: 400px;
+   width: 400px;
+ }
+
+}
+
+@media screen and (max-width: 600px){
+  /*nothing cng in there*/
+  
+  h1 {
+    font-size: 25px;
+  }
+  
+  .computer-sec {
+    height: 200px;
+    width: 200px;
+  }
+  
+  .computer-sec h1 {
+    font-size: 15px;
+  }
+  
+  .result h3, h4 {
+    font-size: 15px;
+  }
+}

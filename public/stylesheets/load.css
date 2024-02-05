@@ -1,0 +1,77 @@
+:root {
+  --body: rgb(60, 60, 60);
+  --loadContainer: rgb(80, 80, 80);
+  --loadDisplay: rgb(100, 100, 100);
+  --loadBtnSec: rgb(100, 100, 100);
+  --loadBtn: rgb(115, 115, 115);
+  --loadResult: rgb(100, 100, 100);
+  --loadFooter: rgb(80, 80, 80);
+  --load: rgb(80, 80, 80);
+}
+
+.load {
+  background: var(--body);
+}
+
+.load > .container {
+  background: var(--loadContainer);
+}
+
+.load > .container > .computer-sec {
+  background: var(--loadDisplay);
+}
+
+.load > .container > .button-sec{
+  background: var(--loadBtnSec);
+}
+
+.load > .container > .button-sec > button {
+  background: var(--loadBtn);
+}
+
+.load > .container > .result {
+  background: var(--loadResult);
+}
+
+.load > footer {
+  background: var(--loadFooter);
+}
+
+ 
+.load > .container > .computer-sec > h1{
+  color: var(--loadDisplay);
+}
+
+.load > .container > .result > h3 {
+  color: var(--loadResult);
+}
+.load > .container > .button-sec > button {
+  color: var(--loadBtn);
+}
+.load > footer > h6,
+.load > footer > h6 > span > a,
+.load > .container > h1 {
+  color: var(--load);
+}
+
+.load > .container > .computer-sec > .computer {
+  background: transparent;
+}
+
+.load {
+  transition: all 1s;
+  animation: load 1000ms ease-in-out infinite alternate;
+}
+
+@keyframes load {
+  from {
+    transform: scale(1);
+  }
+  
+  to {
+    transform: scale(1.1);
+  }
+}
+/* {
+  color: var(--load);
+} */

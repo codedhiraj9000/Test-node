@@ -1,0 +1,15 @@
+*.json
+
+node_modules/
+
+gameDir/
+
+node.zip
+
+user.js
+
+test.ejs
+
+test.css
+
+test.js
